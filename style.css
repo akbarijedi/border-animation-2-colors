@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(155, 155, 155, 0.93);
+}
+.card {
+    width: 200px;
+    height: 250px;
+    background-color: #000;
+    position: relative;
+    box-shadow: 0px 0px 5px 2px #000;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-280deg);
+    width: 160%;
+    height: 130%;
+    background-image: conic-gradient(#ff0000 0deg, #ff00bb 90deg, transparent 130deg, transparent 180deg, #30c1ff 180deg, #00ffbb 270deg, transparent 310deg, transparent 360deg);
+    transition: transform 2s;
+    border-radius: 10px;
+}
+.card:hover::before{
+    transform: translate(-50%, -50%) rotate(-100deg);
+}
+.card::after {
+    content: '';
+    color: #ddd;
+    position: absolute;
+    background-color: #000;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    height: 247px;
+    width: 197px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
